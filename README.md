@@ -11,4 +11,4 @@ This project is to work out a single page application featuring a map of your ne
 	```
     open index.html
 
-* or [Live](https://allenlili.github.io/udacity-fend-neighborhood-map/)
+* or [Demo](https://allenlili.github.io/udacity-fend-neighborhood-map/)
