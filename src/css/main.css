@@ -1,0 +1,184 @@
+/*
+ *  basic
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/**
+   nav
+ */
+nav {
+    display: flex;
+    flex-flow: column;
+    min-width: 300px;
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    transform: translate(-300px, 0px);
+    /*transform: translate(0px, 0px);*/
+    transition: width .3s ease-in-out;
+}
+
+.nav-title {
+    padding: 0.5em;
+    margin: 0;
+    font-size: 20px;
+}
+
+/* hamburger icon */
+a#menu {
+    font-size: 1.575rem;
+    position: absolute;
+    right: -1.5em;
+    top: .1em;
+}
+
+a#menu svg {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+a#menu:hover {
+    cursor: pointer;
+}
+
+/* filter section */
+.btn-controller {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* search column */
+#search {
+    width: 70%;
+    font-size:15px;
+}
+
+/* search button */
+#filter-btn {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 30%;
+    font-size: 18px;
+    height: 100%;
+}
+
+#filter-btn .filter-icon{
+    width: 25%;
+    height: 100%;
+}
+
+#filter-btn .filter-text{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+#filter-btn:hover {
+    background-color: #0787b1;
+}
+
+/* location list */
+.loc-list {
+    width: 100%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+.loc-li {
+    text-align: left;
+    vertical-align: bottom;
+    font-size: 20px;
+    color: #555655;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.loc-li:hover {
+    background-color: red;
+    opacity: 0.5;
+    color: white;
+    cursor: pointer;
+}
+
+/*
+    main
+ */
+main {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100%;
+}
+
+.top {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    padding: 0;
+    margin: 0;
+    background-color: #1a2229;
+    color: white;
+}
+
+.top .title{
+    text-align: center;
+    margin: auto;
+}
+
+.map {
+    background-color: black;
+    width: 100%;
+    flex-grow: 1;
+}
+
+/*
+ *  off canvas
+ */
+body.open {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+nav.open {
+    position: relative;
+    transform: translate(0px, 0px);
+    transition: width .3s ease-in-out;
+}
+
+main.open {
+    width: auto;
+    flex-grow: 1;
+}
+
+/*
+ *  color
+ */
+.black {
+    background-color: black;
+    color: white;
+}
+
+.light_black {
+    background-color: #1a2229;
+    color: white;
+}
+
+.light_blue {
+    background-color: #3c679c;
+    color: white;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="css/main.css" media="all">
+    <link rel="stylesheet" href="css/small.css" media="screen and (max-device-width: 425px)">
+    <link rel="stylesheet" href="css/medium.css" media="screen and (min-device-width: 426px) and (max-device-width: 850px)">
+    <link rel="stylesheet" href="css/large.css" media="screen and (min-device-width: 851px)">
+    <style>
+
+    </style>
+</head>
+<body>
+<nav id="drawer" class="black">
+    <h1 class="nav-title">Neighborhood</h1>
+    <a id="menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
+            <line style="fill:none;stroke:#0787b1;stroke-width:5;stroke-miterlimit:10;" x1="8" y1="12" x2="48" y2="12"></line>
+            <line style="fill:none;stroke:#0787b1;stroke-width:5;stroke-miterlimit:10;" x1="8" y1="28" x2="48" y2="28"></line>
+            <line style="fill:none;stroke:#0787b1;stroke-width:5;stroke-miterlimit:10;" x1="8" y1="44" x2="48" y2="44"></line>
+        </svg>
+    </a>
+    <div class="btn-controller">
+        <input id='search' data-bind="textInput: searchLocation" type="text" placeholder="Station Location">
+        <button id='filter-btn' class="light_blue" data-bind="click: filter">
+            <div class="filter-icon">
+                <svg enable-background="new 0 0 52 52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="white" d="m51.039 7c0-4.596-12.577-7-25-7s-25 2.404-25 7c0 1.042.651 1.969 1.796 2.783l17.204 23.54v17.528c0 .43.256.813.652.979l.686.246 10.662-10.663v-8.087l17.185-23.517-.001-.012c1.156-.817 1.816-1.75 1.816-2.797zm-25-5c14.04 0 23 2.961 23 5 0 .422-.404.883-1.135 1.349l-.051-.006.017.027c-2.837 1.781-10.737 3.63-21.831 3.63-11.105 0-19.01-1.852-21.839-3.635l.017-.027-.412-.245c-.491-.378-.766-.749-.766-1.093 0-2.039 8.96-5 23-5zm4 38.586-8 8v-14.586h8zm.494-8.586h-8.987l-14.931-20.433c4.823 1.607 12.148 2.433 19.424 2.433s14.6-.826 19.424-2.432z">
+                    </path>
+                </svg>
+            </div>
+            <div class="filter-text">Filter</div>
+        </button>
+    </div>
+    <div class="loc-list" data-bind="foreach: locations">
+        <div class="loc-li" data-bind="text: title, click: $root.display"></div>
+    </div>
+</nav>
+<main id="main">
+    <div class="top">
+        <h3 class="title">Neighborhood Map</h3>
+    </div>
+    <div class="map"></div>
+</main>
+<script src='js/lib/knockout-3.4.2.js'></script>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/app.js"></script>
+<script>
+    window.gm_authFailure = function() {
+        alert('Google maps failed to load!');
+    };
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYC9NgkDAf8iGkCWJdYcOHO6zdL4oTcJw&v=3&callback=initMap"></script>
+</body>
+</html>
